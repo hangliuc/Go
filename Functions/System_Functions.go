@@ -58,8 +58,47 @@ func main() {
 	fmt.Printf("b=%v\n", b)
 
 	fmt.Println("结果", "ABC" == "abc")
-	
+
 	//11、返回子串第一次出现index值
 	index := strings.Index("NLT_abc", "abc")
 	fmt.Printf("index=%v\n", index)
+
+	//12、返回最后出现的位置
+	index = strings.LastIndex("go golang", "go")
+	fmt.Printf("index=%v\n", index)
+
+	//13、将指定子串替换另外的子串
+	//n = -1 全部替换
+	str = strings.Replace("go go hello", "go", "北京", -1)
+	fmt.Printf("index=%v\n", str)
+
+	//14、按照指定字符为分割符，将一个字符串拆分为字符串数组
+	strArr := strings.Split("hello,world,ok", ",")
+	for i := 0; i < len(strArr); i++ {
+		fmt.Printf("str[%v]=%v\n", i, strArr[i])
+	}
+	fmt.Printf("strArr=%v\n", strArr)
+
+	//15、将字符串进行大小写转换
+	str = "goLang Hello"
+	str = strings.ToLower(str)
+	str = strings.ToUpper(str) // 大写
+	fmt.Printf("str=%v\n", str)
+
+	//16、将字符串左右空格去掉
+	str = strings.TrimSpace("  i love you china   ")
+	fmt.Printf("str=%v\n", str)
+
+	//17、将字符串两边指定字符串去掉
+	str = strings.Trim("! hel!lo!", " !") // 不会去掉中间的
+	fmt.Printf("str=%v\n", str)
+
+	//18、 \strings.TrimLeft() strings.TrimRight()将左边、右边的字符去掉
+
+	//19、 判断字符串是否以指定的字符串开头
+	b = strings.HasPrefix("ftp:192.168.1.1", "ftp")
+	fmt.Printf("b=%v\n", b)
+	
+	//20、判断是否以指定字符串结尾
+	// strings.HasSuffix()
 }
