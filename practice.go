@@ -3,18 +3,15 @@ package main
 import "fmt"
 
 func main() {
-	var arr [5]int = [...]int{-1, 1, 10, 20, 30}
-	sum := 0
-	sum1 := 0
-	for _, val := range arr {
-		sum += val
+	var arr [2][3]int = [2][3]int{{1, 2, 3}, {4, 5, 6}}
+	fmt.Println("arr3=", arr)
+
+	// for 遍历
+
+	for i := 0; i < len(arr); i++ { // 0
+		for j := 0; j < len(arr[i]); j++ {
+			fmt.Printf("%v\t", arr[i][j])
+		}
+		fmt.Println()
 	}
-
-	fmt.Println(sum)
-
-	for i := 0; i < len(arr); i++ {
-		sum1 += arr[i]
-	}
-
-	fmt.Println(sum1)
 }
